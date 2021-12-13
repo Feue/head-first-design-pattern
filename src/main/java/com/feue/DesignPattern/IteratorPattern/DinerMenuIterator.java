@@ -1,5 +1,6 @@
 package com.feue.DesignPattern.IteratorPattern;
 
+import java.util.Calendar;
 import java.util.Iterator;
 
 /**
@@ -8,10 +9,12 @@ import java.util.Iterator;
  */
 public class DinerMenuIterator implements Iterator<MenuItem> {
     MenuItem[] items;
-    int position = 0;
+    int position;
 
     public DinerMenuIterator(MenuItem[] items) {
         this.items = items;
+        Calendar rightNow = Calendar.getInstance();
+        position = rightNow.get(Calendar.DAY_OF_WEEK)%2;
     }
 
     @Override
@@ -24,7 +27,9 @@ public class DinerMenuIterator implements Iterator<MenuItem> {
 
     @Override
     public MenuItem next() {
-        return items[position++];
+        MenuItem item = items[position];
+        position += 2;
+        return item;
     }
 
     @Override
@@ -34,9 +39,8 @@ public class DinerMenuIterator implements Iterator<MenuItem> {
                     ("You can't remove an item util you've done at least one next()");
         }
         if (items[position-1] != null) {
-            for (int i = position-1; i < items.length-1; i++) {
-                items[i] = items[i+1];
-            }
+            if (items.length - position >= 0)
+                System.arraycopy(items, position, items, position - 1, items.length - position);
             items[items.length-1] = null;
         }
     }
