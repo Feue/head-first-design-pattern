@@ -7,9 +7,9 @@ import java.util.Iterator;
  * @create 2021-12-10 16:13
  */
 public class Waitress {
-    Menu pancakeHouseMenu;
-    Menu dinerMenu;
-    Menu cafeMenu;
+    private Menu pancakeHouseMenu;
+    private Menu dinerMenu;
+    private Menu cafeMenu;
 
     public Waitress(Menu pancakeHouseMenu, Menu dinerMenu, Menu cafeMenu) {
         this.pancakeHouseMenu = pancakeHouseMenu;

@@ -5,10 +5,10 @@ package com.feue.DesignPattern.IteratorPattern;
  * @create 2021-12-10 15:23
  */
 public class MenuItem {
-    String name;
-    String description;
-    boolean vegetarian;
-    double price;
+    private String name;
+    private String description;
+    private boolean vegetarian;
+    private double price;
 
     public MenuItem(String name,
                     String description,

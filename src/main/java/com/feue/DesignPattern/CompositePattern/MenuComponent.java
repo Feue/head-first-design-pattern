@@ -1,4 +1,6 @@
-package com.feue.CompositePattern;
+package com.feue.DesignPattern.CompositePattern;
+
+import java.util.Iterator;
 
 /**
  * @author Feue
@@ -39,6 +41,10 @@ public abstract class MenuComponent {
     }
 
     public void print() {
+        throw new UnsupportedOperationException();
+    }
+
+    public Iterator<MenuComponent> createIterator() {
         throw new UnsupportedOperationException();
     }
 }

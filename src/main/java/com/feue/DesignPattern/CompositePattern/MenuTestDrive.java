@@ -1,4 +1,4 @@
-package com.feue.CompositePattern;
+package com.feue.DesignPattern.CompositePattern;
 
 /**
  * @author Feue
@@ -36,5 +36,6 @@ public class MenuTestDrive {
 
         Waitress waitress = new Waitress(allMenus);
         waitress.printMenu();
+        waitress.printVegetarianMenu();
     }
 }

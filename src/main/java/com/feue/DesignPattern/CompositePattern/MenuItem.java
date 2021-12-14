@@ -1,14 +1,16 @@
-package com.feue.CompositePattern;
+package com.feue.DesignPattern.CompositePattern;
+
+import java.util.Iterator;
 
 /**
  * @author Feue
  * @create 2021-12-13 16:28
  */
 public class MenuItem extends MenuComponent {
-    String name;
-    String description;
-    boolean vegetarian;
-    double price;
+    private String name;
+    private String description;
+    private boolean vegetarian;
+    private double price;
 
     public MenuItem(String name,
                     String description,
@@ -48,5 +50,10 @@ public class MenuItem extends MenuComponent {
         }
         System.out.println(", "+getPrice());
         System.out.println("    -- "+getDescription());
+    }
+
+    @Override
+    public Iterator<MenuComponent> createIterator() {
+        return new NullIterator();
     }
 }

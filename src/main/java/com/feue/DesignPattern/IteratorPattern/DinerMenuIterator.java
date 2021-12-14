@@ -8,8 +8,8 @@ import java.util.Iterator;
  * @create 2021-12-10 15:28
  */
 public class DinerMenuIterator implements Iterator<MenuItem> {
-    MenuItem[] items;
-    int position;
+    private MenuItem[] items;
+    private int position;
 
     public DinerMenuIterator(MenuItem[] items) {
         this.items = items;

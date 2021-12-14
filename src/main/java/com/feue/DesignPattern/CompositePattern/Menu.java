@@ -1,4 +1,4 @@
-package com.feue.CompositePattern;
+package com.feue.DesignPattern.CompositePattern;
 
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -8,9 +8,9 @@ import java.util.Iterator;
  * @create 2021-12-13 16:34
  */
 public class Menu extends MenuComponent {
-    ArrayList<MenuComponent> components = new ArrayList<>();
-    String name;
-    String description;
+    private ArrayList<MenuComponent> components = new ArrayList<>();
+    private String name;
+    private String description;
 
     public Menu(String name, String description) {
         this.name = name;
@@ -53,5 +53,10 @@ public class Menu extends MenuComponent {
             MenuComponent component = iterator.next();
             component.print();
         }
+    }
+
+    @Override
+    public Iterator<MenuComponent> createIterator() {
+        return new CompositeIterator(components.iterator());
     }
 }

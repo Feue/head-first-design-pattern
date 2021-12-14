@@ -8,7 +8,7 @@ import java.util.Iterator;
  * @create 2021-12-13 15:18
  */
 public class CafeMenu implements Menu {
-    HashMap<String, MenuItem> items = new HashMap<>();
+    private HashMap<String, MenuItem> items = new HashMap<>();
 
     public CafeMenu() {
         addItem("Veggie Burger and Air Fries",

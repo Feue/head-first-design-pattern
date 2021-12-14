@@ -7,9 +7,9 @@ import java.util.Iterator;
  * @create 2021-12-10 15:45
  */
 public class DinerMenu implements Menu {
-    static final int MAX_ITEMS = 6;
-    int numberOfItems = 0;
-    MenuItem[] items;
+    private static final int MAX_ITEMS = 6;
+    private int numberOfItems = 0;
+    private MenuItem[] items;
 
     public DinerMenu() {
         items = new MenuItem[MAX_ITEMS];
