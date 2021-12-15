@@ -24,12 +24,17 @@ public class DoubleLockCheckSingleton {
         return instance;
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
+        Thread[] threads = new Thread[5];
         long start = new Date().getTime();
         for (int i = 0; i < 5; i++) {
-            new Thread(() -> {
+            threads[i] = new Thread(() -> {
                 System.out.println(DoubleLockCheckSingleton.getInstance());
-            }).start();
+            });
+            threads[i].start();
+        }
+        for (int i = 0; i < 5; i++) {
+            threads[i].join();
         }
         long end = new Date().getTime();
         System.out.println((end-start)+"ms");
